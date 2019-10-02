@@ -10,7 +10,11 @@ const pool = new Pool({
 const getEmployees = (request, response) => {                                 // GET ALL
     pool.query('SELECT * FROM bank5 ORDER BY id ASC', (error, results) => {
       if (error) {  throw error      }
-      response.status(200).json(results.rows)
+      response.status(200).json({
+        status: 'success', 
+        data: results.rows,
+        message: 'Retrieved ALL employees'
+      });
     })
   }
 
@@ -18,7 +22,11 @@ const getEmployee = (request, response) => {                                  //
     const id = parseInt(request.params.id)
       pool.query('SELECT * FROM bank5 WHERE id = $1', [id], (error, results) => {
       if (error) {        throw error      }
-      response.status(200).json(results.rows)
+      response.status(200).json({
+        status: 'success', 
+        data: results.rows,
+        message: 'Retrieved employee selected'
+      });
     })
   }
 
@@ -45,7 +53,7 @@ const createEmployee = (request, response) => {                                 
     pool.query('INSERT INTO bank5 (name,dept,post,salary) VALUES ($1, $2,$3,$4)',
     [name,dept,post,salary], 
      (error, employed) => { if (error) {        throw error      }
-      response.status(201).send(`Name of employee added: ${name+" of "+dept}`)
+      response.status(201).send(`Name of employee added: ${name+ " of "+dept}`)
     })
   }
 
