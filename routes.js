@@ -41,11 +41,11 @@ const getEmployee = (request, response) => {                                  //
   }
 
 const createEmployee = (request, response) => {                                  //  POST
-    const {name,dept,post,salary } = request.body  
+    const {name,dept,post,salary} = request.body  
     pool.query('INSERT INTO bank5 (name,dept,post,salary) VALUES ($1, $2,$3,$4)',
     [name,dept,post,salary], 
      (error, employed) => { if (error) {        throw error      }
-      response.status(201).send(`Number of employees added: ${employed.rowCount}`)
+      response.status(201).send(`Name of employee added: ${name+" of "+dept}`)
     })
   }
 
