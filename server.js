@@ -1,14 +1,17 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const app = express()
-const db = require('./queries')
+const db = require('./routes')
 const port = 6060
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true, }))
 
+//Routes
 app.get('/', (request, response) => {
-  response.json({ info: 'WeLCOME TO MONZE DARK-MATTER SYMPOSIUM' })})
+response.json({ info: 'WELCOME TO DARK-MATTER PHYSICS SYMPOSIUM 2019' })})
+
+
 app.get('/employees', db.getEmployees)
 app.get('/employees/:id', db.getEmployee)
 app.post('/employees', db.createEmployee)
