@@ -6,12 +6,13 @@ CREATE TABLE EMPLOYEES (
   id1 serial PRIMARY KEY,   name VARCHAR(90) NOT NULL,
   post VARCHAR(90), dept VARCHAR(90) default 'HUMAN-RESOURCE',
   salary int default 62005,
+  status VARCHAR(90) default 'PART-TIME', 
   createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP );
 
 CREATE TABLE EMPLOYEESCONTACTS (
   id2 serial PRIMARY KEY,  
   email VARCHAR(90) NOT NULL,  mobile VARCHAR(90) NOT NULL,
-  xstatus VARCHAR(90) default 'CONTRATOR', UNIQUE(email),
+  retirement VARCHAR(90) default 'CONTRATOR', UNIQUE(email,mobile),
   FOREIGN KEY (id2) REFERENCES EMPLOYEES on delete cascade );
 
 CREATE TABLE EMPLOYEESFAMILY (

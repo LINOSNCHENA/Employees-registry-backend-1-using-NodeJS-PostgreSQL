@@ -46,9 +46,9 @@ const getEmployee = (request, response) => {                                  //
   }
 
 const createEmployee = (request, response) => {                                  //  POST
-    const {name,dept,post,salary } = request.body  
-    pool.query('INSERT INTO employees (name,dept,post,salary ) VALUES ($1, $2,$3,$4)',
-    [name,dept,post,salary ], 
+    const {name,dept,post,salary,status } = request.body  
+    pool.query('INSERT INTO employees (name,dept,post,salary,status ) VALUES ($1, $2,$3,$4,$5)',
+    [name,dept,post,salary,status ], 
      (error, employed) => { if (error) {        throw error      }
       response.status(201).send(`Name of employee added: ${name+ " of "+dept}`)})
   }
