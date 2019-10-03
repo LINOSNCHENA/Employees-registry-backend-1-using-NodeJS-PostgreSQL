@@ -12,12 +12,12 @@ request.post({ url: 'http://localhost:6060/employees', body: json, json: true,},
 request.get('http://localhost:6060/employees')
             .on('response', function(response) {
               console.log(response.statusCode) // 200
-              console.log(response.headers['content-type']) // 'image/png'
+              console.log(response.headers['content-type']) 
             })
-            .pipe(request.put('http://mysite.com/img.png'))
+            .pipe(request.put('http://localhost:6060/employees'))
 
 
- request({method: 'PUT',
+request({method: 'PUT',
           preambleCRLF: true,
           postambleCRLF: true,
           uri: 'http://localhost:6060/employees',
@@ -26,10 +26,11 @@ request.get('http://localhost:6060/employees')
         data: [
           {
             'content-type': 'application/json',
-            body: JSON.stringify({foo: 'bar', _attachments: {'message.txt': {follows: true, length: 18, 'content_type': 'text/plain' }}})
+            body: JSON.stringify({foo: 'bar',
+            _attachments: {'message.txt': {follows: true, length: 30, 'content_type': 'text/plain' }}})
           },
           { body: 'I am an attachment' }
-        ]
+        ] // Data ends
       }
     },
     function (error, response, body) {

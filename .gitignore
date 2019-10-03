@@ -1,7 +1,49 @@
 # File created using '.gitignore Generator' for Visual Studio Code: https://bit.ly/vscode-gig
 
-# Created by https://www.gitignore.io/api/visualstudiocode,windows
-# Edit at https://www.gitignore.io/?templates=visualstudiocode,windows
+# Created by https://www.gitignore.io/api/visualstudiocode,windows,leiningen,actionscript,advancedinstaller
+# Edit at https://www.gitignore.io/?templates=visualstudiocode,windows,leiningen,actionscript,advancedinstaller
+
+### Actionscript ###
+# Build and Release Folders
+bin-debug/
+bin-release/
+[Oo]bj/
+[Bb]in/
+
+# Other files and folders
+.settings/
+
+# Executables
+*.swf
+*.air
+*.ipa
+*.apk
+
+# Project files, i.e. `.project`, `.actionScriptProperties` and `.flexProperties`
+# should NOT be excluded as they contain compiler settings and other important
+# information for Eclipse / Flash Builder.
+
+### AdvancedInstaller ###
+# Advanced Installer caches and default build output
+*-cache/
+*-SetupFiles/
+Prerequisites/
+
+### Leiningen ###
+pom.xml
+pom.xml.asc
+*.jar
+*.class
+/lib/
+/classes/
+/target/
+/checkouts/
+.lein-deps-sum
+.lein-repl-history
+.lein-plugins/
+.lein-failures
+.nrepl-port
+.cpcache/
 
 ### VisualStudioCode ###
 .vscode/*
@@ -40,7 +82,7 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-# End of https://www.gitignore.io/api/visualstudiocode,windows
+# End of https://www.gitignore.io/api/visualstudiocode,windows,leiningen,actionscript,advancedinstaller
 
 # Custom rules (everything added below won't be overriden by 'Generate .gitignore File' if you use 'Update' option)
 
