@@ -17,7 +17,7 @@
                     <div th:switch="${customers}" class="container my-5">  
                         <p class="my-5">
                          <h4 class=headText>ENTRY OF EMPLOYEE DETAILS</h4>
-    <form action="http://localhost:6060/employees" method="post">
+    <form action="http://localhost:3030/employees" method="post">
         <label for="name">FULL NAME</label> <input type="text" name="name" width="600">
         <label for="salary">GROSS-SALARY</label><input type="text" name="salary" width="600"> <br>
         <label for="post">JOB POSITION</label> <select name="post" width="600">
@@ -38,7 +38,7 @@
         <input type="submit">
     </form><br>
     <h4 class=headText>EDIT OF EMPLOYEE ADDRESS/EDIT</h4>
-    <form action="http://localhost:6060/employees" method="put">
+    <form action="http://localhost:3030/employees" method="put">
         <label for="id">ID</label> <input type="number" name="id" width="600">
         <label for="name">FULL NAME</label> <input type="text" name="name" width="600">
         <label for="salary">GROSS-SALARY</label><input type="text" name="salary" width="600"> <br>
@@ -60,13 +60,13 @@
         <input type="submit">
     </form><br>
     <h4 class=headText>DELET OF EMPLOYEE FAMILY/DELETE</h4>
-    <form action="http://localhost:6060/employees" method="delete">
+    <form action="http://localhost:3030/employees" method="delete">
         <label for="id">ID OF TRUSH</label> <input type="number" name="id" width="1600">
   <input type="submit">
 
     </form><br>
 <h4 class=headText>DISPLAY VIEW OF EMPLOYEES</h4>
-    <form action="http://localhost:6060/employees" method="get">
+    <form action="http://localhost:3030/employees" method="get">
            <table class="table table-striped table-responsive-md">
                    <thead>
                        <tr><th>FULL NAME</th><th>GROSSPAY</th>

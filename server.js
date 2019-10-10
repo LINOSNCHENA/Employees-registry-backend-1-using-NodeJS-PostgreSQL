@@ -4,7 +4,7 @@ const app = express()
 const de = require('./seEmployees')
 const dc = require('./seContacts')
 const df = require('./seFamily')
-const port = 6060
+const port = 3030
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true, }))
@@ -30,4 +30,4 @@ app.delete('/family/:id3', df.deleteFamily)      // Route #3
 app.put('/family/:id3', df.updateFamily)         // Route #4
 app.post('/family/:d1', df.createFamily)         // Route #5
 
-app.listen(port, () => {  console.log(`App running on port ${port}.`)})
+app.listen(port, () => {  console.log(`Postgresql server #3 is running on port ${port}.`)})
