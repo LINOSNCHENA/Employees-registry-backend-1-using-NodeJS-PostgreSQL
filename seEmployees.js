@@ -4,7 +4,7 @@ const pool = new Pool({
   user: 'postgres',
   host: 'localhost',
   database: 'presly',
-  password: 'Monze2019@',
+  password: 'Monze2020',
   port: 5432})
 
 const getEmployees = (request, response) => {                                 // GET ALL
