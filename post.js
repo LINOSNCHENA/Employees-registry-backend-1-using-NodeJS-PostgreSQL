@@ -1,3 +1,5 @@
+// API ROUTES
+
 const request = require('request');
 const json = {};
 
@@ -7,14 +9,14 @@ request.post({ url: 'http://localhost:3030/employees', body: json, json: true,},
                     return console.error('upload failed:', err);
                   }
                   console.log('Upload successful!  Server responded with:', body);
-            });
+            });                                                                        // POST #1
 
 request.get('http://localhost:3030/employees')
             .on('response', function(response) {
-              console.log(response.statusCode) // 200
+              console.log(response.statusCode)              // 200
               console.log(response.headers['content-type']) 
             })
-            .pipe(request.put('http://localhost:3030/employees'))
+            .pipe(request.put('http://localhost:3030/employees'))                     // GET #2
 
 
 request({method: 'PUT',
@@ -38,4 +40,4 @@ request({method: 'PUT',
         return console.error('upload failed:', error);
       }
       console.log('Upload successful!  Server responded with:', body);
-    })
+    })                                                                      // PUT #3
