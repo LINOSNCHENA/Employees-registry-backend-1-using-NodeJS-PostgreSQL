@@ -40,4 +40,4 @@ request({method: 'PUT',
         return console.error('upload failed:', error);
       }
       console.log('Upload successful!  Server responded with:', body);
-    })                                                                      // PUT #3
+    })                                                                         // PUT #3
