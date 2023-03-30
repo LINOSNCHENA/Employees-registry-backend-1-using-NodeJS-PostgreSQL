@@ -1,13 +1,12 @@
 // STUDENTS TABLE # 2/3
 
 const Pool = require('pg').Pool
-
 const pool = new Pool({
   user: 'postgres',
   host: 'localhost',
   database: 'presly',
-  password: 'Monze@2019',
-  port: 5433
+  password: 'Thresa@2022',
+  port: 5432,
 })
 
 const createFamily = (request, response) => {                                //  CREATE
@@ -61,6 +60,5 @@ const deleteFamily = (request, response) => {                               // D
     response.status(200).send(`Contact deleted with ID: ${id}`)
   })
 }
-
 
 module.exports = { getFamily, getFamilys, createFamily, updateFamily, deleteFamily }

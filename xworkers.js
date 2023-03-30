@@ -6,8 +6,8 @@ const pool = new Pool({
   user: 'postgres',
   host: 'localhost',
   database: 'presly',
-  password: 'Monze@2019',
-  port: 5433
+  password: 'Thresa@2022',
+  port: 5432,
 })
 
 const createEmployee = (request, response) => {                                  //  CREATE
