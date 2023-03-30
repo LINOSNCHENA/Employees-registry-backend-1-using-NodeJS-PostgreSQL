@@ -18,8 +18,8 @@
             <div class="card-body">
                 <div th:switch="${customers}" class="container my-5">
                     <p class="my-5">
-                    <h4 class=headText>1. ENTRY OF EMPLOYEE DETAILS</h4>
-                    <form action="http://localhost:3030/xworkers" method="post">
+                    <h4 class=headText>1. ENTRY OF LOAN DETAILS</h4>
+                    <form action="http://localhost:3030/tloans" method="post">
                         <label for="name">FULL-NAME</label> <input type="text" name="name" width="600">
                         <label for="mobile"> MOBILE</label><input type="text" name="mobile" width="600"> <br>
                         <label for="office"> OFFICE</label> <select name="office" width="600">
@@ -38,8 +38,8 @@
                     </form>
                     <br><br><br>
 
-                    <h4 class=headText>2. EDIT OF EMPLOYEE ADDRESS/EDIT</h4>
-                    <form action="http://localhost:3030/xworkers" method="put">
+                    <h4 class=headText>2. EDIT OF LOAN ADDRESS/EDIT</h4>
+                    <form action="http://localhost:3030/tloans" method="put">
                         <label for="id">ID</label> <input type="number" name="id" width="600">
                         <label for="name">FULL NAME</label> <input type="text" name="name" width="600">
                         <label for="salary">GROSS-SALARY</label><input type="text" name="salary" width="600"> <br>
@@ -65,16 +65,16 @@
                     </form>
 
                     <br><br><br>
-                    <h4 class=headText>3. DELET OF EMPLOYEE FAMILY/DELETE</h4>
-                    <form action="http://localhost:3030/xworkers" method="delete">
+                    <h4 class=headText>3. DELET OF LOAN CLIENTS/DELETE</h4>
+                    <form action="http://localhost:3030/tloans" method="delete">
                         <label for="id">ID OF TRUSH</label> <input type="number" name="id" width="1600">
                         <input type="submit">
 
                         <br><br><br>
 
                     </form><br>
-                    <h4 class=headText>4. DISPLAY VIEW OF EMPLOYEES</h4>
-                    <form action="http://localhost:3030/xworkers" method="get">
+                    <h4 class=headText>4. DISPLAY VIEW OF LOANS</h4>
+                    <form action="http://localhost:3030/tloans" method="get">
                         <table class="table table-striped table-responsive-md">
                             <thead>
                                 <tr>
@@ -85,10 +85,10 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr th:each="employees : ${customers}">
-                                    <td th:text="${employees.post}"></td>
-                                    <td th:text="${employees.dept}"></td>
-                                    <td th:text="${employees.statusl}"></td>
+                                <tr th:each="loans : ${customers}">
+                                    <td th:text="${loans.post}"></td>
+                                    <td th:text="${loans.dept}"></td>
+                                    <td th:text="${loans.statusl}"></td>
                                 </tr>
                             </tbody>
                         </table>

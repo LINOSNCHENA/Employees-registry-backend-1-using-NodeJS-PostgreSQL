@@ -1,8 +1,8 @@
-DROP TABLE IF EXISTS xFAMILY;
-DROP TABLE IF EXISTS XCONTACTS;
-DROP TABLE IF EXISTS XWORKERS;
+DROP TABLE IF EXISTS tClients;
+DROP TABLE IF EXISTS TEMPLOYEES;
+DROP TABLE IF EXISTS TLOANS;
 
-CREATE TABLE XWORKERS
+CREATE TABLE TLOANS
 (
   id1 serial PRIMARY KEY,
   name VARCHAR(90) NOT NULL,
@@ -12,26 +12,26 @@ CREATE TABLE XWORKERS
   createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-CREATE TABLE XCONTACTS
+CREATE TABLE TEMPLOYEES
 (
   id2 serial PRIMARY KEY,
   email VARCHAR(90) NOT NULL,
   mobile VARCHAR(90) NOT NULL,
   retirement VARCHAR(90) default 'CONTRATOR',
   UNIQUE(email,mobile),
-  FOREIGN KEY (id2) REFERENCES XWORKERS on delete cascade
+  FOREIGN KEY (id2) REFERENCES TLOANS on delete cascade
 );
 
-CREATE TABLE xFAMILY
+CREATE TABLE tClients
 (
   id3 serial PRIMARY KEY,
   mother VARCHAR(90) NOT NULL,
   father VARCHAR(90) NOT NULL,
   UNIQUE(mother,father),
-  FOREIGN KEY (id3) REFERENCES XWORKERS on delete cascade
+  FOREIGN KEY (id3) REFERENCES TLOANS on delete cascade
 );
 
-INSERT INTO XWORKERS
+INSERT INTO TLOANS
   ( name,mobile, office)
 VALUES
   ( 'Nikolas Nchena1', 1230112, 450004),
@@ -42,21 +42,22 @@ VALUES
   ( 'Irene Nchena6', 5223112, 45450004);
 
 
-INSERT INTO XCONTACTS
+INSERT INTO TEMPLOYEES
   (id2,email, mobile)
 VALUES
-  (1, 'nikolasnchena@yahoo.com', '+230775263158'),
-  (2, 'Lorenanchena@yahoo.com', '+230775263158'),
-  (3, 'Leonchena@yahoo.com', '+230775263158'),
-  (4, 'catherineMarvin@yahoo.com', '+230775263158');
+  (1, 'nikolas.Marvin@yahoo.com', '+72305263158'),
+  (2, 'Lorena.Marvin@gmail.com', '+8775263158'),
+  (3, 'Leon.Marvin@gmail.com', '+230775263158'),
+  (4, 'catherine.Marvin@yahoo.com', '+43175263158'),
+    (5, 'thresa.Marvin@gmailahoo.com', '+260775263158');
 
   
-INSERT INTO xFAMILY
+INSERT INTO tClients
   (id3, father,mother)
 VALUES
   (1, 'LINOS NCHENA1', 'KRISTINA1 NCHENA'),
-  (2, 'PRESLY NCHENA2', 'CATHY2 NCHENA'),
+  (2, 'PRESLY NCHENA2', 'CATHRINE2 NCHENA'),
   (3, 'NELSON SIMWEMBA3', 'NORIA3 SIMWEMBA');
 
 SELECT *
-from XWORKERS, XCONTACTS, xFAMILY;
+from TLOANS, TEMPLOYEES, tClients;
